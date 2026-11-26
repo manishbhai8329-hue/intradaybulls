@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="te">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#100c25">
-<meta name="description" content="Intraday Bulls - Telugu and English stock market education, market fundamentals, chart concepts and risk awareness.">
-<title>Intraday Bulls | Telugu Market Education</title>
+<meta name="theme-color" content="#101c2c">
+<meta name="description" content="Intraday Bulls - Stock market education, chart concepts and financial awareness in Telugu and English.">
+<title>Intraday Bulls | Stock Market Education</title>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -21,30 +20,29 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 fbq('init','1162284326314329');
 fbq('track','PageView');
 </script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1162284326314329&amp;ev=PageView&amp;noscript=1"
-alt="">
-</noscript>
 <!-- End Meta Pixel Code -->
 
 <style>
+
 :root{
-  --bg:#100c25;
-  --purple:#241b48;
-  --cyan:#71e8f4;
-  --lime:#c6ff83;
-  --white:#f7f6ff;
-  --muted:#c5c1df;
+  --bg:#101c2c;
+  --orange:#ffb17a;
+  --gold:#ffdbac;
+  --white:#f5f8ff;
+  --muted:#b9c6d7;
+  --border:#ffb17a38;
 }
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
+
 html{
-  min-height:100%;
   -webkit-text-size-adjust:100%;
 }
+
 body{
   margin:0;
-  min-height:100%;
   background:var(--bg);
   color:var(--white);
   font-family:system-ui,-apple-system,
@@ -52,7 +50,11 @@ body{
   "Segoe UI",Arial,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
+
+/* PREMIUM FULL SCREEN BACKGROUND */
+
 .page{
+  position:relative;
   min-height:100vh;
   min-height:100svh;
   min-height:100dvh;
@@ -61,250 +63,384 @@ body{
   justify-content:center;
   padding:10px;
   background:
-    radial-gradient(circle at 0% 0%,#6537b35b,transparent 48%),
-    radial-gradient(circle at 100% 100%,#2f91a333,transparent 48%),
-    linear-gradient(155deg,#1a1238,#0d0b20 75%);
+    radial-gradient(
+      ellipse at 0% 0%,
+      #426a9a65,transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      #db783e35,transparent 50%
+    ),
+    linear-gradient(
+      150deg,#243b54,#101c2c 65%,#192536
+    );
 }
+
+/* COMPACT PREMIUM CARD */
+
 .card{
+  position:relative;
   width:100%;
-  max-width:395px;
-  padding:clamp(12px,2.3vh,22px) 17px;
-  border:1px solid #71e8f442;
-  border-radius:23px;
-  background:linear-gradient(155deg,#29204f,#171431);
-  box-shadow:0 20px 60px #0008;
+  max-width:390px;
+  padding:clamp(14px,2.7vh,24px) 17px 15px;
+  border:1px solid var(--border);
+  border-radius:25px;
+  background:
+    linear-gradient(
+      155deg,#30465ce8,#172638f5
+    );
+  box-shadow:
+    0 22px 60px #0008,
+    inset 0 1px 0 #ffffff15;
   text-align:center;
+  overflow:hidden;
 }
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-  margin-bottom:12px;
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:15%;
+  right:15%;
+  height:2px;
+  background:linear-gradient(
+    90deg,transparent,var(--orange),transparent
+  );
 }
-.top-label{
-  color:var(--cyan);
-  font-size:9px;
-  font-weight:850;
-  letter-spacing:.7px;
-}
-.language{
-  padding:5px 9px;
-  border:1px solid #c6ff8355;
-  border-radius:20px;
-  color:var(--lime);
-  font-size:9px;
-  font-weight:800;
-  white-space:nowrap;
-}
+
+/* CIRCULAR LOGO */
+
 .logo{
-  width:clamp(65px,11vh,88px);
-  height:clamp(65px,11vh,88px);
+  width:clamp(65px,12vh,90px);
+  height:clamp(65px,12vh,90px);
   margin:0 auto 11px;
   display:grid;
   place-items:center;
   overflow:hidden;
-  border:3px solid var(--cyan);
+  border:3px solid var(--orange);
   border-radius:50%;
-  background:linear-gradient(145deg,#473a80,#1a2750);
-  box-shadow:0 0 25px #71e8f44b;
+  background:linear-gradient(
+    145deg,#536d86,#22364d
+  );
+  box-shadow:
+    0 0 25px #ffb17a45,
+    0 0 0 5px #ffb17a0c;
 }
+
 .logo img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-.logo-mark{
+
+.logo-fallback{
   display:none;
-  color:var(--lime);
-  font-size:26px;
-  font-weight:950;
+  color:var(--orange);
+  font-size:28px;
+  font-weight:900;
 }
+
+/* LANGUAGE LABEL */
+
 .eyebrow{
-  margin:0 0 6px;
-  color:var(--cyan);
-  font-size:10px;
-  font-weight:850;
-  letter-spacing:1.1px;
+  display:inline-block;
+  margin:0 0 8px;
+  padding:5px 11px;
+  border:1px solid #ffb17a40;
+  border-radius:30px;
+  background:#ffb17a0c;
+  color:var(--gold);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
 }
+
+/* BRAND NAME */
+
 h1{
   margin:0;
-  font-size:clamp(28px,8vw,39px);
+  font-size:clamp(27px,7.8vw,36px);
   font-weight:950;
-  line-height:1.1;
+  line-height:1.15;
   letter-spacing:-.8px;
 }
-h1 span{color:var(--lime)}
-.subline{
-  margin:8px 0 0;
-  color:#dedaff;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.5px;
+
+h1 span{
+  color:var(--orange);
 }
+
+.subtitle{
+  margin:7px 0 0;
+  color:#d2dfed;
+  font-size:9px;
+  font-weight:750;
+  letter-spacing:1px;
+}
+
+/* DECORATIVE DIVIDER */
+
 .divider{
-  width:95px;
+  width:100px;
   height:2px;
-  margin:14px auto;
-  border-radius:5px;
-  background:linear-gradient(90deg,transparent,var(--cyan),var(--lime),transparent);
+  margin:12px auto;
+  border-radius:10px;
+  background:linear-gradient(
+    90deg,transparent,var(--orange),transparent
+  );
 }
-.telugu{
-  margin:0 auto 8px;
-  color:var(--lime);
-  font-size:clamp(15px,4.1vw,18px);
+
+/* TELUGU EDUCATIONAL HEADLINE */
+
+.headline{
+  margin:0 0 8px;
+  color:var(--gold);
+  font-size:clamp(15px,4.4vw,19px);
   font-weight:850;
   line-height:1.55;
 }
+
 .description{
-  max-width:335px;
-  margin:0 auto 15px;
+  max-width:325px;
+  margin:0 auto 14px;
   color:var(--muted);
-  font-size:11.5px;
+  font-size:12px;
   line-height:1.6;
 }
-.features{
-  display:grid;
-  gap:7px;
-  margin-bottom:16px;
-  text-align:left;
-}
-.feature{
+
+/* COMPACT EDUCATIONAL CHIPS */
+
+.topics{
   display:flex;
   align-items:center;
-  gap:10px;
-  padding:9px 10px;
-  border:1px solid #71e8f425;
-  border-radius:10px;
-  background:#ffffff08;
-  color:#f0edff;
-  font-size:11px;
-  line-height:1.5;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:16px;
 }
-.feature-icon{
-  flex:none;
-  width:27px;
-  height:27px;
-  display:grid;
-  place-items:center;
+
+.topic{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  padding:7px 8px;
+  border:1px solid #ffffff20;
   border-radius:8px;
-  background:#71e8f417;
-  color:var(--cyan);
-  font-size:11px;
-  font-weight:900;
+  background:#ffffff08;
+  color:#e1eaf6;
+  font-size:10px;
+  font-weight:700;
 }
+
+/* GLOWING ORANGE CTA */
+
 .cta{
   display:flex;
   align-items:center;
   justify-content:center;
+  gap:7px;
   width:100%;
-  min-height:54px;
+  min-height:56px;
   padding:12px 7px;
-  border:1px solid #e4ffb9;
+  border:1px solid #ffe1c5;
   border-radius:13px;
-  background:linear-gradient(110deg,#e7ffbf,#c6ff83,#9ce958);
-  color:#1c2b0c;
+  background:linear-gradient(
+    110deg,#ffdbac,#ffb17a,#ff9458
+  );
+  color:#382010;
   text-decoration:none;
   text-align:center;
-  font-size:clamp(12px,3.5vw,15px);
+  font-size:clamp(11px,3.5vw,14px);
   font-weight:950;
   line-height:1.3;
-  box-shadow:0 0 20px #c6ff8360;
-  animation:glow 2.8s ease-in-out infinite;
+  box-shadow:0 0 24px #ff9d6060;
+  animation:glow 2.7s ease-in-out infinite;
   touch-action:manipulation;
   -webkit-tap-highlight-color:transparent;
 }
-@keyframes glow{
-  0%,100%{box-shadow:0 0 12px #c6ff8345}
-  50%{box-shadow:0 0 27px #c6ff8385}
+
+.cta svg{
+  width:19px;
+  height:19px;
+  flex:none;
+  fill:currentColor;
 }
+
+@keyframes glow{
+
+  0%,100%{
+    box-shadow:0 0 12px #ff9d6045;
+  }
+
+  50%{
+    box-shadow:0 0 29px #ff9d6085;
+  }
+
+}
+
 .cta:focus-visible,
-.legal button:focus-visible,
-.close:focus-visible{
+button:focus-visible{
   outline:3px solid white;
   outline-offset:3px;
 }
-.micro{
-  margin:9px 0 0;
-  color:#d7d2f0;
+
+/* 10 SECOND COUNTDOWN */
+
+.timer{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:5px;
+  margin:10px 0 0;
+  color:var(--muted);
   font-size:10px;
+  line-height:1.5;
 }
+
+.timer[hidden]{
+  display:none;
+}
+
+.timer strong{
+  color:var(--orange);
+  font-size:15px;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+}
+
+.cancel{
+  padding:3px 5px;
+  border:0;
+  background:transparent;
+  color:var(--gold);
+  font:inherit;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+/* COUNTDOWN PROGRESS BAR */
+
+.progress{
+  width:110px;
+  height:3px;
+  margin:5px auto 0;
+  overflow:hidden;
+  border-radius:10px;
+  background:#ffffff15;
+}
+
+.progress[hidden]{
+  display:none;
+}
+
+.progress-fill{
+  width:100%;
+  height:100%;
+  border-radius:10px;
+  background:linear-gradient(
+    90deg,var(--orange),var(--gold)
+  );
+}
+
+.micro{
+  margin:8px 0 0;
+  color:#cbd8e8;
+  font-size:10px;
+  line-height:1.5;
+}
+
+/* FINANCIAL DISCLAIMER */
+
 .disclaimer{
   margin:12px 0 0;
   padding-top:10px;
-  border-top:1px solid #ffffff25;
-  color:#c9c5e1;
+  border-top:1px solid #ffffff20;
+  color:var(--muted);
   font-size:10px;
   line-height:1.55;
 }
-.disclaimer b{color:var(--lime)}
+
+.disclaimer b{
+  color:var(--gold);
+}
+
+/* LEGAL LINKS */
+
 .legal{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  margin-top:9px;
+  gap:9px;
+  margin-top:8px;
 }
+
 .legal button{
-  padding:5px 2px;
   border:0;
+  padding:5px 2px;
   background:transparent;
-  color:var(--cyan);
-  font:inherit;
+  color:var(--orange);
+  font-family:inherit;
   font-size:10px;
   text-decoration:underline;
   text-underline-offset:3px;
   cursor:pointer;
 }
-.legal span{color:#aaa4cb}
 
-/* LEGAL POPUPS */
-.overlay{
-  position:fixed;
-  z-index:100;
-  inset:0;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:15px;
-  background:#000c;
+.legal span{
+  color:var(--muted);
 }
-.overlay.open{display:flex}
-.modal{
-  position:relative;
-  width:100%;
-  max-width:450px;
+
+/* PRIVACY AND TERMS POPUPS */
+
+dialog{
+  width:calc(100% - 28px);
+  max-width:430px;
   max-height:85vh;
   max-height:85dvh;
-  overflow-y:auto;
   padding:22px 18px;
-  border:1px solid #71e8f465;
-  border-radius:18px;
-  background:#251d48;
+  overflow-y:auto;
+  border:1px solid var(--border);
+  border-radius:19px;
+  background:#22364b;
+  color:var(--white);
   box-shadow:0 20px 60px #000a;
   text-align:left;
   overscroll-behavior:contain;
 }
-.modal h2{
-  margin:0 35px 14px 0;
-  color:var(--lime);
-  font-size:19px;
+
+dialog::backdrop{
+  background:#07101cdd;
 }
-.modal h3{
+
+dialog h2{
+  margin:0 35px 15px 0;
+  color:var(--orange);
+  font-size:20px;
+}
+
+dialog h3{
   margin:15px 0 5px;
-  color:var(--cyan);
+  color:var(--gold);
   font-size:13px;
 }
-.modal p{
+
+dialog p{
   margin:7px 0;
-  color:#e2dff5;
+  color:#d6e0ed;
   font-size:12px;
   line-height:1.7;
 }
+
+dialog a{
+  color:var(--gold);
+  overflow-wrap:anywhere;
+}
+
 .close{
   position:absolute;
-  top:11px;
-  right:11px;
+  top:10px;
+  right:10px;
   width:34px;
   height:34px;
   border:1px solid #ffffff35;
@@ -314,330 +450,925 @@ h1 span{color:var(--lime)}
   font-size:23px;
   cursor:pointer;
 }
-body.modal-open{overflow:hidden}
 
-@media(max-width:350px){
-  .card{padding-left:12px;padding-right:12px}
-  h1{font-size:27px}
-  .feature{font-size:10px}
+body.modal-open{
+  overflow:hidden;
 }
+
+/* SMALL MOBILE OPTIMIZATION */
+
+@media(max-width:360px){
+
+  .page{
+    padding:8px;
+  }
+
+  .card{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .topic{
+    font-size:9px;
+    padding:6px 7px;
+  }
+
+  .cta{
+    font-size:11px;
+    gap:5px;
+  }
+
+  .cta svg{
+    width:16px;
+    height:16px;
+  }
+
+}
+
+/* COMPACT MOBILE SCREEN */
+
 @media(max-height:700px){
-  .card{padding-top:10px;padding-bottom:10px}
-  .top{margin-bottom:7px}
-  .logo{width:56px;height:56px;margin-bottom:6px}
-  h1{font-size:27px}
-  .divider{margin:9px auto}
-  .telugu{font-size:13px}
-  .description{font-size:10.5px;margin-bottom:10px}
-  .features{gap:5px;margin-bottom:10px}
-  .feature{padding:6px 8px}
-  .cta{min-height:47px}
-  .disclaimer{margin-top:8px;padding-top:7px}
+
+  .card{
+    padding-top:11px;
+    padding-bottom:11px;
+  }
+
+  .logo{
+    width:62px;
+    height:62px;
+    margin-bottom:7px;
+  }
+
+  .eyebrow{
+    margin-bottom:5px;
+    padding:4px 9px;
+  }
+
+  h1{
+    font-size:28px;
+  }
+
+  .subtitle{
+    margin-top:5px;
+  }
+
+  .divider{
+    margin:8px auto;
+  }
+
+  .headline{
+    font-size:15px;
+    margin-bottom:5px;
+  }
+
+  .description{
+    font-size:11px;
+    line-height:1.45;
+    margin-bottom:10px;
+  }
+
+  .topics{
+    gap:5px;
+    margin-bottom:10px;
+  }
+
+  .topic{
+    padding:5px 7px;
+  }
+
+  .cta{
+    min-height:48px;
+    padding:9px 6px;
+  }
+
+  .timer{
+    margin-top:7px;
+  }
+
+  .micro{
+    margin-top:5px;
+  }
+
+  .disclaimer{
+    margin-top:8px;
+    padding-top:7px;
+    line-height:1.4;
+  }
+
+  .legal{
+    margin-top:4px;
+  }
+
 }
+
+/* SHORT IN-APP BROWSER VIEWPORT */
+
+@media(max-height:530px){
+
+  .page{
+    padding:6px;
+  }
+
+  .card{
+    padding-top:9px;
+    padding-bottom:8px;
+  }
+
+  .logo{
+    width:44px;
+    height:44px;
+    margin-bottom:4px;
+  }
+
+  .logo-fallback{
+    font-size:17px;
+  }
+
+  .eyebrow{
+    font-size:8px;
+    margin-bottom:3px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .subtitle{
+    margin-top:3px;
+  }
+
+  .divider{
+    margin:6px auto;
+  }
+
+  .headline{
+    font-size:13px;
+    margin-bottom:4px;
+  }
+
+  .description{
+    font-size:10.5px;
+    line-height:1.35;
+    margin-bottom:6px;
+  }
+
+  .topics{
+    margin-bottom:7px;
+  }
+
+  .topic{
+    padding:4px 6px;
+    font-size:9px;
+  }
+
+  .cta{
+    min-height:44px;
+    padding:8px 6px;
+  }
+
+  .timer{
+    margin-top:4px;
+  }
+
+  .micro{
+    margin-top:4px;
+  }
+
+  .disclaimer{
+    margin-top:6px;
+    padding-top:5px;
+    line-height:1.3;
+  }
+
+  .legal{
+    margin-top:3px;
+  }
+
+}
+
 @media(prefers-reduced-motion:reduce){
-  .cta{animation:none}
+
+  .cta{
+    animation:none;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<main class="page">
-<section class="card" aria-label="Intraday Bulls learning community">
+<!-- META PIXEL NOSCRIPT -->
 
-  <div class="top">
-    <span class="top-label">MARKET LEARNING COMMUNITY</span>
-    <span class="language">TELUGU + ENGLISH</span>
-  </div>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1162284326314329&ev=PageView&noscript=1"
+alt="">
+</noscript>
+
+<main class="page">
+
+<section class="card"
+aria-label="Intraday Bulls Educational Community">
+
+  <!-- PROFILE LOGO -->
 
   <div class="logo">
-    <img src="https://github.com/manishbhai8329-hue/intradyimage/releases/download/yk/intra.jpg"
+
+    <img
+      src="https://github.com/manishbhai8329-hue/intradyimage/releases/download/yk/intra.jpg"
       alt="Intraday Bulls logo"
-      width="88" height="88"
+      width="90"
+      height="90"
+      fetchpriority="high"
       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-    <span class="logo-mark" aria-hidden="true">IB</span>
+
+    <span class="logo-fallback"
+      aria-hidden="true">IB</span>
+
   </div>
 
-  <p class="eyebrow">WELCOME TO</p>
+  <!-- LANGUAGE TAG -->
+
+  <p class="eyebrow">
+
+    తెలుగు + ENGLISH LEARNING
+
+  </p>
+
+  <!-- BRAND NAME -->
 
   <h1>
-    INTRADAY<br>
-    <span>BULLS</span>
+
+    INTRADAY <span>BULLS</span>
+
   </h1>
 
-  <p class="subline">
+  <p class="subtitle">
+
     LEARN • UNDERSTAND • STAY INFORMED
+
   </p>
 
   <div class="divider"></div>
 
-  <h2 class="telugu">
-    స్టాక్ మార్కెట్‌ను అర్థం చేసుకోండి.<br>
-    అవగాహనతో నేర్చుకోండి.
+  <!-- TELUGU HEADLINE -->
+
+  <h2 class="headline">
+
+    స్టాక్ మార్కెట్ గురించి తెలుసుకోండి.<br>
+
+    తెలుగులో సులభంగా నేర్చుకోండి.
+
   </h2>
 
+  <!-- EDUCATIONAL CONTENT -->
+
   <p class="description">
-    స్టాక్ మార్కెట్ ప్రాథమిక అంశాలు,
-    చార్ట్ కాన్సెప్ట్స్ మరియు రిస్క్ అవగాహన
-    గురించి సరళమైన విద్యా సమాచారం.
-    Explore market concepts in Telugu &amp; English.
+
+    A dedicated community for Stock Market
+    Education and Financial Knowledge.
+    Explore market fundamentals, chart concepts
+    and risk awareness in Telugu &amp; English.
+
   </p>
 
-  <div class="features">
-    <div class="feature">
-      <span class="feature-icon">01</span>
-      <span>Stock Market Basics • స్టాక్ మార్కెట్ ప్రాథమికాలు</span>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">02</span>
-      <span>Chart Reading &amp; Market Concepts</span>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">03</span>
-      <span>Risk Management &amp; Financial Awareness</span>
-    </div>
+  <!-- EDUCATIONAL TOPICS -->
+
+  <div class="topics">
+
+    <span class="topic">
+
+      📊 Chart Basics
+
+    </span>
+
+    <span class="topic">
+
+      📘 Market Learning
+
+    </span>
+
+    <span class="topic">
+
+      🛡️ Risk Awareness
+
+    </span>
+
   </div>
 
-  <!-- MANUAL TELEGRAM CTA -->
+  <!-- TELEGRAM CTA -->
+
   <a class="cta"
-    id="joinBtn"
-    href="https://t.me/+-koTonXE--JlODI1">
+     id="joinBtn"
+     href="https://t.me/+-koTonXE--JlODI1">
+
+    <svg viewBox="0 0 24 24"
+      aria-hidden="true">
+
+      <path d="M21.7 3.4L2.9 10.7c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.8 5.5c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.3-2.2 4.9 3.6c.9.5 1.5.2 1.7-.9l3.2-15.1c.3-1.3-.5-1.9-1.4-1.5zM9.4 13.4l10-6.3c.5-.3.9-.1.5.3l-8.2 7.4-.3 3.2z"/>
+
+    </svg>
+
     JOIN FREE TELEGRAM CHANNEL
+
   </a>
 
-  <p class="micro">
-    Free Educational Community • Telugu + English
+  <!-- VISIBLE COUNTDOWN -->
+
+  <p class="timer" id="timerText" hidden>
+
+    Opening Telegram in
+
+    <strong id="seconds">10</strong>s
+
+    <button type="button"
+      class="cancel"
+      id="cancelTimer">
+
+      Cancel
+
+    </button>
+
   </p>
+
+  <!-- COUNTDOWN PROGRESS BAR -->
+
+  <div class="progress"
+    id="progress"
+    aria-hidden="true"
+    hidden>
+
+    <div class="progress-fill"
+      id="progressFill"></div>
+
+  </div>
+
+  <p class="micro">
+
+    Free Educational Community • Telugu + English
+
+  </p>
+
+  <!-- FINANCIAL RISK DISCLAIMER -->
 
   <p class="disclaimer">
+
     <b>Disclaimer / గమనిక:</b>
+
     ఈ సమాచారం విద్యా ప్రయోజనాల కోసం మాత్రమే.
-    General financial education only.
-    Not personalized investment advice,
-    trading signals or buy/sell recommendations.
-    Investing involves risk, including possible
-    loss of capital. No guaranteed returns.
+
+    General educational information only.
+    Not investment advice, trading signals
+    or buy/sell recommendations.
+    Trading and investing involve risk of capital loss.
+    No guaranteed returns.
+
   </p>
 
-  <nav class="legal" aria-label="Legal information">
-    <button type="button" data-modal="privacy">
+  <!-- LEGAL LINKS -->
+
+  <nav class="legal"
+    aria-label="Legal information">
+
+    <button type="button"
+      data-dialog="privacy">
+
       Privacy Policy
+
     </button>
+
     <span>•</span>
-    <button type="button" data-modal="terms">
+
+    <button type="button"
+      data-dialog="terms">
+
       Terms &amp; Conditions
+
     </button>
+
   </nav>
 
 </section>
+
 </main>
 
 <!-- PRIVACY POLICY -->
-<div class="overlay" id="privacy">
-  <section class="modal" role="dialog"
-    aria-modal="true"
-    aria-labelledby="privacyTitle">
 
-    <button class="close" type="button"
-      aria-label="Close Privacy Policy">×</button>
+<dialog id="privacy"
+  aria-labelledby="privacyTitle">
 
-    <h2 id="privacyTitle">Privacy Policy</h2>
+  <button class="close"
+    type="button"
+    aria-label="Close Privacy Policy">×</button>
 
-    <p>
-      Intraday Bulls is an educational
-      landing page focused on financial
-      market learning in Telugu and English.
-    </p>
+  <h2 id="privacyTitle">
 
-    <h3>1. Analytics and Advertising</h3>
-    <p>
-      This website uses Meta Pixel to measure
-      page visits and Telegram button interactions.
-      Meta Pixel may process browser, device,
-      cookie and interaction information.
-    </p>
+    Privacy Policy
 
-    <h3>2. Purpose of Tracking</h3>
-    <p>
-      Analytics information may be used to
-      measure advertising performance,
-      understand visitor interactions and
-      improve educational promotions.
-    </p>
+  </h2>
 
-    <h3>3. Third-Party Services</h3>
-    <p>
-      Clicking the Telegram button opens
-      Telegram. Telegram's own privacy
-      policies and terms apply.
-    </p>
+  <p>
 
-    <h3>4. Privacy Choices</h3>
-    <p>
-      Visitors may manage browser cookies
-      and available Meta advertising privacy
-      settings. Applicable consent and
-      data protection requirements must
-      also be respected.
-    </p>
+    Intraday Bulls is an educational website
+    focused on stock market learning and
+    financial awareness in Telugu and English.
 
-    <h3>5. Contact</h3>
-    <p>
-      For privacy inquiries, contact the
-      official Intraday Bulls operator.
-      A valid contact email should be added
-      before publishing.
-    </p>
+  </p>
 
-    <h3>6. Policy Updates</h3>
-    <p>
-      This policy may be updated when website
-      practices or applicable requirements change.
-    </p>
-  </section>
-</div>
+  <h3>1. Analytics and Advertising</h3>
+
+  <p>
+
+    This website uses Meta Pixel to measure
+    page visits, Telegram button interactions
+    and automatic navigation events.
+    Meta Pixel may process browser information,
+    device information, cookies and interaction data.
+
+  </p>
+
+  <h3>2. Purpose of Tracking</h3>
+
+  <p>
+
+    Analytics information may be used to
+    understand visitor interactions,
+    measure advertising performance and
+    improve educational promotions.
+
+  </p>
+
+  <h3>3. Third-Party Services</h3>
+
+  <p>
+
+    This website may open Telegram through
+    manual button clicks or a visible
+    10-second countdown.
+
+    Meta and Telegram are independently
+    operated third-party services.
+    Their respective privacy policies apply.
+
+  </p>
+
+  <p>
+
+    <a href="https://www.facebook.com/privacy/policy/"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Meta Privacy Policy
+
+    </a>
+
+  </p>
+
+  <p>
+
+    <a href="https://telegram.org/privacy"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Telegram Privacy Policy
+
+    </a>
+
+  </p>
+
+  <h3>4. Privacy Choices</h3>
+
+  <p>
+
+    Visitors may manage cookies through
+    browser settings and available Meta
+    advertising privacy preferences.
+    Applicable consent and data protection
+    requirements must be respected.
+
+  </p>
+
+  <h3>5. Contact Information</h3>
+
+  <p>
+
+    For privacy inquiries, contact the
+    Intraday Bulls website operator.
+
+  </p>
+
+  <p>
+
+    Email: [ADD ACTUAL CONTACT EMAIL]
+
+  </p>
+
+  <h3>6. Policy Updates</h3>
+
+  <p>
+
+    This Privacy Policy may be updated
+    when website practices or applicable
+    requirements change.
+
+  </p>
+
+</dialog>
 
 <!-- TERMS AND CONDITIONS -->
-<div class="overlay" id="terms">
-  <section class="modal" role="dialog"
-    aria-modal="true"
-    aria-labelledby="termsTitle">
 
-    <button class="close" type="button"
-      aria-label="Close Terms and Conditions">×</button>
+<dialog id="terms"
+  aria-labelledby="termsTitle">
 
-    <h2 id="termsTitle">Terms &amp; Conditions</h2>
+  <button class="close"
+    type="button"
+    aria-label="Close Terms and Conditions">×</button>
 
-    <h3>1. Educational Purpose</h3>
-    <p>
-      Content is intended for general financial
-      education only and does not constitute
-      personalized financial or investment advice.
-    </p>
+  <h2 id="termsTitle">
 
-    <h3>2. Financial Risk</h3>
-    <p>
-      Trading and investing involve financial
-      risk, including possible partial or complete
-      loss of invested capital.
-      No investment returns are guaranteed.
-    </p>
+    Terms &amp; Conditions
 
-    <h3>3. Independent Decisions</h3>
-    <p>
-      Visitors are responsible for their
-      own financial decisions and should
-      conduct independent research or consult
-      appropriately qualified professionals.
-    </p>
+  </h2>
 
-    <h3>4. External Platforms</h3>
-    <p>
-      Telegram is a third-party platform.
-      Its own policies and terms apply
-      to activity on that service.
-    </p>
+  <h3>1. Educational Purpose</h3>
 
-    <h3>5. Changes</h3>
-    <p>
-      Educational content and these terms
-      may be updated as necessary.
-    </p>
-  </section>
-</div>
+  <p>
+
+    Intraday Bulls provides general
+    educational information about
+    stock market fundamentals,
+    chart concepts and financial awareness.
+
+  </p>
+
+  <h3>2. No Investment Advice</h3>
+
+  <p>
+
+    Information provided is intended
+    for educational purposes only.
+    It does not constitute personalized
+    financial advice, investment recommendations
+    or trading signals.
+
+  </p>
+
+  <h3>3. Financial Risk</h3>
+
+  <p>
+
+    Trading and investing involve financial
+    risks, including partial or complete
+    loss of invested capital.
+    No financial returns are guaranteed.
+
+  </p>
+
+  <h3>4. Independent Decisions</h3>
+
+  <p>
+
+    Visitors are responsible for their
+    financial decisions and should conduct
+    independent research or consult
+    appropriately qualified financial professionals.
+
+  </p>
+
+  <h3>5. Telegram Community</h3>
+
+  <p>
+
+    Telegram is an independently operated
+    third-party platform.
+    Joining the community is voluntary.
+    Opening Telegram does not automatically
+    subscribe visitors to the channel.
+
+  </p>
+
+  <h3>6. Automatic Navigation</h3>
+
+  <p>
+
+    This website automatically opens the
+    Telegram destination after a visible
+    10-second countdown.
+
+    Visitors may cancel automatic navigation
+    using the Cancel button or by opening
+    Privacy Policy or Terms and Conditions.
+
+  </p>
+
+  <h3>7. Updates</h3>
+
+  <p>
+
+    Educational content and these terms
+    may be updated when necessary.
+
+  </p>
+
+</dialog>
+
+<!-- TRACKING AND AUTO REDIRECT -->
 
 <script>
 (function(){
+
   "use strict";
 
-  // Subscribe only on manual CTA click.
-  // No timer or automatic redirect.
-  document.getElementById("joinBtn")
-    .addEventListener("click",function(){
-      try{
-        if(typeof window.fbq==="function"){
-          window.fbq("track","Subscribe");
-          window.fbq("trackCustom","CTA_Click");
-        }
-      }catch(error){}
-    });
+  const TIMER_SECONDS = 10;
 
-  const overlays={
-    privacy:document.getElementById("privacy"),
-    terms:document.getElementById("terms")
-  };
+  const joinButton =
+    document.getElementById("joinBtn");
 
-  let active=null;
-  let previousFocus=null;
+  const timerText =
+    document.getElementById("timerText");
 
-  function openModal(name){
-    const overlay=overlays[name];
-    if(!overlay)return;
+  const seconds =
+    document.getElementById("seconds");
 
-    if(active)active.classList.remove("open");
+  const cancelButton =
+    document.getElementById("cancelTimer");
 
-    previousFocus=document.activeElement;
-    active=overlay;
-    overlay.classList.add("open");
-    document.body.classList.add("modal-open");
-    overlay.querySelector(".close").focus();
-  }
+  const progress =
+    document.getElementById("progress");
 
-  function closeModal(){
-    if(!active)return;
+  const progressFill =
+    document.getElementById("progressFill");
 
-    active.classList.remove("open");
-    active=null;
-    document.body.classList.remove("modal-open");
+  // SAME LINK FOR MANUAL AND AUTO REDIRECT
 
-    if(previousFocus&&previousFocus.focus){
-      previousFocus.focus();
+  const destination = joinButton.href;
+
+  let interval = null;
+  let stopped = false;
+
+  const deadline =
+    performance.now() + TIMER_SECONDS * 1000;
+
+  // STANDARD META EVENT
+
+  function trackStandard(eventName){
+
+    try{
+
+      if(typeof window.fbq === "function"){
+
+        window.fbq("track",eventName);
+
+      }
+
+    }catch(error){
+
+      console.warn("Meta Pixel error:",error);
+
     }
+
   }
 
-  document.querySelectorAll("[data-modal]")
+  // CUSTOM META EVENT
+
+  function trackCustom(eventName){
+
+    try{
+
+      if(typeof window.fbq === "function"){
+
+        window.fbq("trackCustom",eventName);
+
+      }
+
+    }catch(error){
+
+      console.warn("Meta custom event error:",error);
+
+    }
+
+  }
+
+  // STOP COUNTDOWN
+
+  function stopTimer(){
+
+    stopped = true;
+
+    if(interval !== null){
+
+      clearInterval(interval);
+
+      interval = null;
+
+    }
+
+    progress.hidden = true;
+
+  }
+
+  // CANCEL AUTO REDIRECT
+
+  function cancelRedirect(){
+
+    if(stopped)return;
+
+    stopTimer();
+
+    timerText.textContent =
+      "Auto redirect cancelled.";
+
+  }
+
+  cancelButton.addEventListener(
+    "click",cancelRedirect
+  );
+
+  // MANUAL CTA CLICK TRACKING
+
+  joinButton.addEventListener(
+    "click",function(event){
+
+      if(event.defaultPrevented)return;
+
+      stopTimer();
+
+      // Subscribe only on manual CTA click.
+
+      trackStandard("Subscribe");
+
+      // Separate custom button click event.
+
+      trackCustom("CTA_Click");
+
+      timerText.textContent =
+        "Opening Telegram Channel...";
+
+      // Immediate native Telegram navigation.
+      // No artificial delay.
+      // No duplicate-click blocking.
+
+    }
+  );
+
+  // AUTO REDIRECT COUNTDOWN
+
+  function updateCountdown(){
+
+    if(stopped)return;
+
+    const remainingMs = Math.max(
+      0,
+      deadline - performance.now()
+    );
+
+    const remainingSeconds =
+      Math.ceil(remainingMs / 1000);
+
+    seconds.textContent = remainingSeconds;
+
+    progressFill.style.width =
+
+      Math.min(
+        100,
+        remainingMs / (TIMER_SECONDS * 1000) * 100
+      ) + "%";
+
+    if(remainingMs <= 0){
+
+      stopTimer();
+
+      timerText.textContent =
+        "Opening Telegram Channel...";
+
+      // Separate AutoRedirect custom event.
+      // Subscribe does not fire automatically.
+
+      trackCustom("AutoRedirect");
+
+      window.location.assign(destination);
+
+    }
+
+  }
+
+  // OPEN PRIVACY AND TERMS
+
+  document.querySelectorAll("[data-dialog]")
     .forEach(function(button){
-      button.addEventListener("click",function(){
-        openModal(button.dataset.modal);
-      });
-    });
 
-  Object.values(overlays).forEach(function(overlay){
-    overlay.querySelector(".close")
-      .addEventListener("click",closeModal);
+      button.addEventListener(
+        "click",function(){
 
-    overlay.addEventListener("click",function(event){
-      if(event.target===overlay)closeModal();
-    });
-  });
+          const dialog =
+            document.getElementById(
+              button.dataset.dialog
+            );
 
-  document.addEventListener("keydown",function(event){
-    if(!active)return;
+          // Prevent redirect while reading policies.
 
-    if(event.key==="Escape"){
-      closeModal();
-      return;
-    }
+          cancelRedirect();
 
-    if(event.key==="Tab"){
-      const focusable=Array.from(
-        active.querySelectorAll("button:not([disabled]),a[href]")
+          if(dialog){
+
+            dialog.showModal();
+
+            document.body.classList.add(
+              "modal-open"
+            );
+
+          }
+
+        }
       );
 
-      if(!focusable.length)return;
+    });
 
-      const first=focusable[0];
-      const last=focusable[focusable.length-1];
+  // CLOSE LEGAL POPUPS
 
-      if(event.shiftKey&&document.activeElement===first){
-        event.preventDefault();
-        last.focus();
-      }else if(!event.shiftKey&&document.activeElement===last){
-        event.preventDefault();
-        first.focus();
+  document.querySelectorAll("dialog")
+    .forEach(function(dialog){
+
+      dialog.querySelector(".close")
+        .addEventListener(
+          "click",function(){
+
+            dialog.close();
+
+          }
+        );
+
+      dialog.addEventListener(
+        "close",function(){
+
+          document.body.classList.remove(
+            "modal-open"
+          );
+
+        }
+      );
+
+      dialog.addEventListener(
+        "click",function(event){
+
+          if(event.target !== dialog)return;
+
+          const rect =
+            dialog.getBoundingClientRect();
+
+          if(
+            event.clientX < rect.left ||
+            event.clientX > rect.right ||
+            event.clientY < rect.top ||
+            event.clientY > rect.bottom
+          ){
+
+            dialog.close();
+
+          }
+
+        }
+      );
+
+    });
+
+  // START VISIBLE 10 SECOND COUNTDOWN
+
+  timerText.hidden = false;
+
+  progress.hidden = false;
+
+  seconds.textContent = TIMER_SECONDS;
+
+  interval = setInterval(
+    updateCountdown,100
+  );
+
+  updateCountdown();
+
+  // STOP TIMER WHEN LEAVING PAGE
+
+  window.addEventListener(
+    "pagehide",stopTimer
+  );
+
+  // CANCEL REDIRECT IF PAGE IS HIDDEN
+
+  document.addEventListener(
+    "visibilitychange",function(){
+
+      if(document.hidden){
+
+        cancelRedirect();
+
       }
+
     }
-  });
+  );
+
 })();
 </script>
 
